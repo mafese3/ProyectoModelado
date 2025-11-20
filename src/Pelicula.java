@@ -8,7 +8,6 @@ public class Pelicula extends Contenido{
     private double sumaCalificaciones;
     private double calificacionMedia;
 
-    private UsuarioAdministrador usuario;
     private List<RecursoPelicula> recursos;
 
 
@@ -18,28 +17,53 @@ public class Pelicula extends Contenido{
         this.duracion = duracion;
         this.recursos = new ArrayList<RecursoPelicula>();
 
-        this.calificacionMedia = 0.0;
-        this.sumaCalificaciones = 0.0;
-        usuario.addCreacion(this);
+        this.calificacionMedia = 0;
+        this.sumaCalificaciones = 0;
+
+        this.recursos = new ArrayList<RecursoPelicula>();
     }
 
+    /**
+     * @return La duración de la película.
+     */
     public int getDuracion() {return this.duracion;}
 
 	/**
-	 * 
-	 * @param duracion
+	 * @param duracion La duración de la película
 	 */
 	public void setDuracion(int duracion) {
 		this.duracion = duracion;
 	}
 
 
-
-    /// Devuelve el usuario creador
-    public UsuarioAdministrador getUsuario() {return this.usuario;}
-
-    /// Añadir un recurso
+    /**
+     * Añadr un recurso en el que ha sido referenciada la película.
+     * @param recurso El recurso a añadir
+     */
     public void addRecurso(RecursoPelicula recurso) {
         this.recursos.add(recurso);
+
+        //Actualizamos la calificación media del contenido
+        this.sumaCalificaciones +=  recurso.getCalificacion();
+        this.calificacionMedia = sumaCalificaciones / recursos.size();
     }
+
+    /**
+     * Elimina un recurso en el que estaba referenciada la película.
+     * @param recurso El recurso a eliminar.
+     */
+    public void removeRecurso(RecursoPelicula recurso) {
+        this.recursos.remove(recurso);
+
+        //Actualizamos la calificación media del contenido.
+        this.sumaCalificaciones -= recurso.getCalificacion();
+        this.calificacionMedia = sumaCalificaciones / recursos.size();
+    }
+
+    public String toString() {
+        return("Título: " + this.getNombre() + ", Calificación media: " + this.calificacionMedia +
+                ", Dirigido por: " + this.getCreador());
+    }
+
+
 }

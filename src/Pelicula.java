@@ -64,6 +64,10 @@ public class Pelicula extends Contenido{
         System.out.println("Recurso eliminado. Calificación media de la película: " + this.calificacionMedia);
     }
 
+    /**
+     * Devuelve una cadena con las propiedades necesarias para que defina a la película.
+     * @return String descriptiva de la película.
+     */
     public String toString() {
         return("Título: " + this.getNombre() + ", Calificación media: " + this.calificacionMedia +
                 ", Dirigido por: " + this.getCreador());

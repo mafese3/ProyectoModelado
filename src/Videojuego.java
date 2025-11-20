@@ -3,49 +3,61 @@ import java.util.List;
 
 public class Videojuego extends Contenido{
 
-
-	private int duracion;
-
     private double calificacionMedia;
     private double sumaCalificaciones;
 
-    private UsuarioAdministrador usuario;
     private List<RecursoVideojuego> recursos;
 
     /// Creamos el constructor de la clase
     public Videojuego(String nombre, String desarrollador, String fechaLanzamiento, int duracion, String genero, UsuarioAdministrador usuario) {
         super(nombre, genero, fechaLanzamiento, desarrollador, TipoContenido.VIDEOJUEGO, usuario);
-        this.duracion = duracion;
-        this.recursos = new ArrayList<RecursoVideojuego>();
 
-        this.calificacionMedia = 0.0;
-        this.sumaCalificaciones = 0.0;
-        usuario.addCreacion(this);
+        this.calificacionMedia = 0;
+        this.sumaCalificaciones = 0;
+
+        this.recursos = new ArrayList<RecursoVideojuego>();
     }
 
+    /**
+     * @return La calificación media del álbum.
+     */
+    public double getCalificacionMedia() {
+        return calificacionMedia;
+    }
 
-
-	public int getDuracion() {
-		return this.duracion;
-	}
-
-	/**
-	 * 
-	 * @param duracion
-	 */
-	public void setDuracion(int duracion) {
-		this.duracion = duracion;
-	}
-
-
-    /// Devuelve el usuario creador
-    public UsuarioAdministrador getUsuario() {return this.usuario;}
-
-    /// Añade un recurso a la lista
+    /**
+     * Añade un recurso en el que ha sido referenciado el videojuego.
+     * @param recurso El recurso a añadir.
+     */
     public void addRecurso(RecursoVideojuego recurso) {
         this.recursos.add(recurso);
+
+        //Actualizamos la calificación media del contenido.
         sumaCalificaciones += recurso.getCalificacion();
         calificacionMedia =  sumaCalificaciones/recursos.size();
+
+        System.out.println("Recurso añadido. Calificación media del videojuego: " + this.calificacionMedia);
     }
 
+    /**
+     * Elimina un recurso en el que estaba referenciado el videojuego.
+     * @param recurso El recurso a eliminar.
+     */
+    public void removeRecurso(RecursoVideojuego recurso) {
+        this.recursos.remove(recurso);
+
+        sumaCalificaciones -= recurso.getCalificacion();
+        calificacionMedia = sumaCalificaciones/recursos.size();
+
+        System.out.println("Recurso eliminado. Calificación media del videojuego: " + this.calificacionMedia);
+    }
+
+    /**
+     * Devuelve una cadena con las propiedades necesarias para que defina al álbum.
+     * @return String descriptiva del álbum.
+     */
+    public String toString(){
+        return ("Título: " + this.getNombre() + ", Calificación media: " +  this.calificacionMedia +
+                ", Creador por: " + this.getCreador());
+    }
 }

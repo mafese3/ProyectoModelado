@@ -31,13 +31,13 @@ public class Album extends Contenido {
     public double getCalificacionMedia() {return this.calificacionMedia;}
 
     /**
-     * Añade un recurso en el que ha sido mencionado.
+     * Añade un recurso en el que ha sido referenciado el álbum.
      * @param recurso El recurso a añadir.
      */
     public void addRecurso(RecursoAlbum recurso) {
         this.recursos.add(recurso);
 
-        //Actualizamos la calificación media del recurso.
+        //Actualizamos la calificación media del contenido.
         this.sumaCalificaciones += recurso.getCalificacion();
         this.calificacionMedia = sumaCalificaciones / recursos.size();
 
@@ -45,15 +45,17 @@ public class Album extends Contenido {
     }
 
     /**
-     * Elimina un recurso en el que estaba mencionado.
+     * Elimina un recurso en el que estaba referenciado el álbum.
      * @param recurso El recurso a eliminar.
      */
     public void removeRecurso(RecursoAlbum recurso) {
         this.recursos.remove(recurso);
 
-        //Actualizamos la calificación media del recurso.
+        //Actualizamos la calificación media del contenido.
         this.sumaCalificaciones -= recurso.getCalificacion();
         this.calificacionMedia = sumaCalificaciones / recursos.size();
+
+        System.out.println("Recurso eliminado. Calificación media del álbum: " + this.calificacionMedia);
     }
 
     /**
@@ -62,6 +64,7 @@ public class Album extends Contenido {
      */
     public void addCancion(Cancion cancion) {
         this.canciones.add(cancion);
+
         System.out.println("Cancion: " + cancion + " añadida al álbum: " + this.getNombre());
     }
 

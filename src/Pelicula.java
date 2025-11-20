@@ -46,6 +46,8 @@ public class Pelicula extends Contenido{
         //Actualizamos la calificación media del contenido
         this.sumaCalificaciones +=  recurso.getCalificacion();
         this.calificacionMedia = sumaCalificaciones / recursos.size();
+
+        System.out.println("Recurso añadido. Calificación media de la película: " + this.calificacionMedia);
     }
 
     /**
@@ -58,6 +60,8 @@ public class Pelicula extends Contenido{
         //Actualizamos la calificación media del contenido.
         this.sumaCalificaciones -= recurso.getCalificacion();
         this.calificacionMedia = sumaCalificaciones / recursos.size();
+
+        System.out.println("Recurso eliminado. Calificación media de la película: " + this.calificacionMedia);
     }
 
     public String toString() {

@@ -106,6 +106,6 @@ public class Album extends Contenido {
      */
     public String toString() {
         return ("Título: " + this.getNombre() + ", Calificación media: "+ this.getCalificacionMedia() +
-                ", Creador por: " + this.getCreador() + "\n Canciones contenidas: " + this.getListaCanciones());
+                ", Creado por: " + this.getCreador() + "\n Canciones contenidas: " + this.getListaCanciones());
     }
 }

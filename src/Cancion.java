@@ -61,6 +61,13 @@ public class Cancion extends Contenido{
         System.out.println("Recurso añadido. Calificacion media de la canción: " + this.calificacionMedia);
     }
 
+    public void removeRecurso(RecursoCancion recurso) {
+        this.recursos.remove(recurso);
+        sumaCalificaciones -= recurso.getCalificacion();
+        calificacionMedia =  sumaCalificaciones/recursos.size();
+
+        System.out.println("Recurso eliminado. Calificación media de la canción: " + this.calificacionMedia);
+    }
     /**
      * Añade la canción a un álbum.
      * @param album Álbum en el que la canción va a ser contenida.
@@ -78,5 +85,45 @@ public class Cancion extends Contenido{
         album.removeCancion(this);
         this.albumes.remove(album);
     }
+
+    /**
+     * Devuelve una lista con todos los álbumes en los que está contenida la canción.
+     * @return Lista de álbumes.
+     */
+    public List<Album> getAlbums() {
+        return this.albumes;
+    }
+
+    /**
+     * Devuelve una cadena listando los álbumes en los que está contenida la canción.
+     * @return String con los títulos de los álbumes.
+     */
+    public String getListaAlbumes() {
+        String albumesString = "";
+
+        if(albumes.size()>0){
+            for(Album album : this.albumes) {
+                if(album.equals(this.albumes.get(this.albumes.size()-1))){
+                    albumesString += album.getNombre();
+                } else {
+                    albumesString += album.getNombre() + ", ";
+                }
+            }
+        } else {
+              albumesString = "";
+        }
+
+        return albumesString;
+    }
+
+    /**
+     * Devuelve una cadena con las propiedades necesarias para que defina la canción.
+     * @return String descriptiva de la canción
+     */
+    public String toString() {
+        return("Título: " + this.getNombre() + ", Calificación media: " + this.getCalificacionMedia() +
+                ", Creada por: " + this.getCreador());
+    }
+
 
 }

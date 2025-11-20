@@ -72,6 +72,14 @@ public class Libro extends Contenido{
 
 
     /**
+     * @return La calificación media del contenido.
+     */
+    public double getCalificacionMedia() {
+        return this.calificacionMedia;
+    }
+
+
+    /**
      * Se añade un recurso en el que ha sido referenciado el libro.
      * @param recurso El recurso en el que ha sido referenciado.
      */
@@ -81,6 +89,28 @@ public class Libro extends Contenido{
         calificacionMedia = sumaCalificaciones / recursos.size();
 
         System.out.println("Recurso añadido. Calificacion media de la canción: " + this.calificacionMedia);
+    }
+
+    /**
+     * Elimina un recurso en el que estaba referenciado el libro.
+     * @param recurso El recurso en el que estaba referenciado.
+     */
+    public void removeRecurso(RecursoLibro recurso) {
+        this.recursos.remove(recurso);
+
+        sumaCalificaciones -= recurso.getCalificacion();
+        calificacionMedia = sumaCalificaciones / recursos.size();
+
+        System.out.println("Recurso eliminado. Calificacion media: " + this.calificacionMedia);
+    }
+
+    /**
+     * Devuelve una cadena con las propiedades necesarias para que defina al libro.
+     * @return String descriptiva del libro.
+     */
+    public String toString() {
+        return ("Título: " + this.getNombre() + ", Calificación media: " + this.getCalificacionMedia() +
+                ", Escrito por: " + this.getCreador());
     }
 
 }

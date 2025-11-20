@@ -7,7 +7,7 @@ public class Libro extends Contenido{
 	private String editorial;
 	private int paginas;
     private double sumaCalificaciones;
-    private double califiacionMedia;
+    private double calificacionMedia;
 
     /// Una lista con todos los recursos en los que está referenciado el libro.
     private List<RecursoLibro>  recursos;
@@ -20,7 +20,7 @@ public class Libro extends Contenido{
         this.editorial = editorial;
         this.paginas = paginas;
         this.sumaCalificaciones = 0;
-        this.califiacionMedia = 0;
+        this.calificacionMedia = 0;
 
         this.recursos = new ArrayList<RecursoLibro>();
     }
@@ -39,37 +39,48 @@ public class Libro extends Contenido{
 		this.saga = saga;
 	}
 
+
+    /**
+     * @return La editorial a la que forma parte el libro.
+     */
 	public String getEditorial() {
 		return this.editorial;
 	}
 
 	/**
 	 * 
-	 * @param editorial
+	 * @param editorial La editorial a la que forma parte el libro.
 	 */
 	public void setEditorial(String editorial) {
 		this.editorial = editorial;
 	}
 
-	public int getPaginas() {
+
+    /**
+     * @return El número de páginas del libro.
+     */
+    public int getPaginas() {
 		return this.paginas;
 	}
 
 	/**
-	 * 
-	 * @param paginas
+	 * @param paginas El número de páginas del libro.
 	 */
 	public void setPaginas(int paginas) {
 		this.paginas = paginas;
 	}
 
 
-
-    /// Añade un recurso
+    /**
+     * Se añade un recurso en el que ha sido referenciado el libro.
+     * @param recurso El recurso en el que ha sido referenciado.
+     */
     public void addRecurso(RecursoLibro recurso) {
         this.recursos.add(recurso);
         sumaCalificaciones += recurso.getCalificacion();
-        califiacionMedia = sumaCalificaciones / recursos.size();
+        calificacionMedia = sumaCalificaciones / recursos.size();
+
+        System.out.println("Recurso añadido. Calificacion media de la canción: " + this.calificacionMedia);
     }
 
 }

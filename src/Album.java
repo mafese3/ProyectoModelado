@@ -65,7 +65,7 @@ public class Album extends Contenido {
     public void addCancion(Cancion cancion) {
         this.canciones.add(cancion);
 
-        System.out.println("Cancion: " + cancion + " añadida al álbum: " + this.getNombre());
+        System.out.println("Cancion: " + cancion.getNombre() + " añadida al álbum: " + this.getNombre());
     }
 
     /**
@@ -108,4 +108,5 @@ public class Album extends Contenido {
         return ("Título: " + this.getNombre() + ", Calificación media: "+ this.getCalificacionMedia() +
                 ", Creado por: " + this.getCreador() + "\n Canciones contenidas: " + this.getListaCanciones());
     }
+
 }

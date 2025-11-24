@@ -103,4 +103,11 @@ public abstract class Recurso {
      * @param tipo El tipo del recurso.
      */
     public void setTipo(TipoRecurso tipo) {this.tipo = tipo;}
+
+    /**
+     * @return El contenido al que hace referencia
+     */
+    public Contenido getContenido() {
+        return null;
+    }
 }

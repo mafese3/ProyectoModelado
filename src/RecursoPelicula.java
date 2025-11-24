@@ -11,12 +11,16 @@ public class RecursoPelicula extends Recurso{
 
 
     public RecursoPelicula(int calificacion, String resena, TipoEstado estado, boolean favorito, Usuario usuario, int fechaVisionado, int numeroVisionados,  Pelicula pelicula) {
-        super(calificacion, resena, estado, favorito, usuario, TipoRecurso.LIBRO);
+        super(calificacion, resena, estado, favorito, usuario, TipoRecurso.AUDIOVISUAL);
         this.fechaVisionado = fechaVisionado;
         this.numeroVisionados = numeroVisionados;
 
         this.pelicula = pelicula;
         pelicula.addRecurso(this);
+    }
+    @Override
+    public Pelicula getContenido() {
+        return pelicula;
     }
 
     /**
@@ -45,12 +49,6 @@ public class RecursoPelicula extends Recurso{
 		this.numeroVisionados = numeroVisionados;
 	}
 
-    /**
-     * @return La película a la que hace referencia.
-     */
-    public Pelicula getPelicula() {
-        return pelicula;
-    }
 
     /**
      * Elimina el recurso propio.

@@ -23,6 +23,11 @@ public class RecursoLibro extends Recurso {
         libro.addRecurso(this);
     }
 
+    @Override
+    public Libro getContenido() {
+        return this.libro;
+    }
+
     /**
      * @return Las horas en las que ha sido completado el libro.
      */
@@ -78,14 +83,6 @@ public class RecursoLibro extends Recurso {
 	public void setFechaFin(String fechaFin) {
 		this.fechaFin = fechaFin;
 	}
-
-
-    /**
-     * @return El libro al que hace referencia.
-     */
-    public Libro getLibro() {
-        return libro;
-    }
 
     /**
      * Elimina el recurso propio.

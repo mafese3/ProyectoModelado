@@ -24,6 +24,11 @@ public class RecursoSerie extends Recurso {
         serie.addRecurso(this);
     }
 
+    @Override
+    public Serie getContenido() {
+        return this.serie;
+    }
+
     /**
      * @return La temporada que está viendo el usuario.
      */
@@ -90,12 +95,6 @@ public class RecursoSerie extends Recurso {
      */
     public void setNumeroVisionados(int numeroVisionados) {this.numeroVisionados = numeroVisionados;}
 
-    /**
-     * @return La serie a la que hace referencia.
-     */
-    public Serie getSerie() {
-        return this.serie;
-    }
 
     public void eliminar() {
         this.serie.removeRecurso(this);

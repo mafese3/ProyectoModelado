@@ -23,6 +23,11 @@ public class RecursoVideojuego extends Recurso {
         videojuego.addRecurso(this);
     }
 
+    @Override
+    public Videojuego getContenido() {
+        return this.videojuego;
+    }
+
 
     /**
      * @return Las horas que ha jugado.
@@ -81,12 +86,6 @@ public class RecursoVideojuego extends Recurso {
 	}
 
 
-    /**
-     * @return El videojuego al que hace referencia.
-     */
-    public Videojuego getVideojuego() {
-        return videojuego;
-    }
 
     /**
      * Elimina el recurso propio.

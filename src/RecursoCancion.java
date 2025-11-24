@@ -16,6 +16,11 @@ public class RecursoCancion extends Recurso {
         cancion.addRecurso(this);
     }
 
+    @Override
+    public Cancion getContenido() {
+        return this.cancion;
+    }
+
     /**
      * @return La fecha en la que se ha escuchado la canción.
      */
@@ -30,13 +35,6 @@ public class RecursoCancion extends Recurso {
 		this.fechaEscucha = fechaEscucha;
 	}
 
-
-    /**
-     * @return La canción a la que hace referencia.
-     */
-    public Cancion getCancion() {
-        return this.cancion;
-    }
 
     /**
      * Elimina el recurso propio.

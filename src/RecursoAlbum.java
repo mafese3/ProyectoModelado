@@ -17,6 +17,11 @@ public class RecursoAlbum extends Recurso {
         album.addRecurso(this);
     }
 
+    @Override
+    public Album getContenido() {
+        return this.album;
+    }
+
     /**
      * @return La fecha en la que se ha escuchado el álbum.
      */
@@ -31,13 +36,6 @@ public class RecursoAlbum extends Recurso {
 		this.fechaEscucha = fechaEscucha;
 	}
 
-
-    /**
-     * @return El álbum al que hace referencia.
-     */
-    public Album getAlbum() {
-        return this.album;
-    }
 
     /**
      * Elimina el recurso propio.
@@ -68,5 +66,8 @@ public class RecursoAlbum extends Recurso {
 
         return listaColecciones;
     }
+
+
+
 
 }

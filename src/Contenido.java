@@ -81,4 +81,9 @@ public abstract class Contenido {
      * @param usuario El usuario administrador que ha añadido el contenido.
      */
     public void setUsuario(UsuarioAdministrador usuario) {this.usuario = usuario;}
+
+    /**
+     * @return La calificación media del contenido
+     */
+    public double getCalificacionMedia() {return -1;}
 }

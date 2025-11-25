@@ -22,7 +22,7 @@ public class Album extends Contenido {
         this.calificacionMedia = 0;
 
         this.recursos = new ArrayList<RecursoAlbum>();
-        this.canciones.addAll(listaCanciones);
+        this.canciones = listaCanciones;
     }
 
     /**

@@ -110,4 +110,9 @@ public abstract class Recurso {
     public Contenido getContenido() {
         return null;
     }
+
+    /**
+     * Funcion que se va a sobreescribir para añadir una colección a las listas de colecciones propias de cada recurso.
+     */
+    public void addToColeccion(RecursoColeccion coleccion) {}
 }

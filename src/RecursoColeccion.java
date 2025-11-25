@@ -55,6 +55,9 @@ public class RecursoColeccion extends Recurso {
         }
     }
 
+    /**
+     * @param recurso El recurso a eliminar en la colección.
+     */
     public void removeRecurso(Recurso recurso) {
         this.recursos.remove(recurso);
         //Si la colección se queda vacía, se convierte en tipo colección.
@@ -68,6 +71,10 @@ public class RecursoColeccion extends Recurso {
         return this.recursos;
     }
 
+    /**
+     * Devuelve una String con los títulos de los contenidos de todos los recursos que forman parte de la colección.
+     * @return La cadena de los títulos concatenados.
+     */
     public String getListaRecursos() {
         String listaRecursos = "";
 
@@ -84,6 +91,9 @@ public class RecursoColeccion extends Recurso {
         return listaRecursos;
     }
 
+    public void eliminar() {
+        this.getUsuario().removeRecurso(this);
+    }
 
 
 }

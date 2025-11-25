@@ -23,70 +23,97 @@ public class Usuario {
         this.recursos = new ArrayList<Recurso>();
     }
 
+    /**
+     * @return El correo electrónico del usuario.
+     */
 	public String getEmail() {
 		return this.email;
 	}
 
 	/**
-	 * @param email
+	 * @param email El correo electrónico del usuario.
 	 */
 	public void setEmail(String email) {
 		this.email = email;
 	}
 
+    /**
+     * @return La contraseña del usuario.
+     */
 	public String getContrasena() {
 		return this.contrasena;
 	}
 
 	/**
-	 * @param contrasena
+	 * @param contrasena La contraseña del usuario.
 	 */
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
 
+    /**
+     * @return La fecha de registro del usuario.
+     */
 	public String getFechaRegistro() {
 		return this.fechaRegistro;
 	}
 
 	/**
-	 * @param fechaRegistro
+	 * @param fechaRegistro La fecha de registro del usuario.
 	 */
 	public void setFechaRegistro(String fechaRegistro) {
 		this.fechaRegistro = fechaRegistro;
 	}
 
+    /**
+     * @return El nombre del usuario.
+     */
 	public String getNombreUsuario() {
 		return this.nombreUsuario;
 	}
 
 	/**
-	 * @param nombreUsuario
+	 * @param nombreUsuario El nombre del usuario.
 	 */
 	public void setNombreUsuario(String nombreUsuario) {
 		this.nombreUsuario = nombreUsuario;
 	}
 
-
-
-
     /**
-    MÉTODOS CREADOS A PARTIR DE LA CLASE PARA DARLE FUNCIONALIDADES.
-    */
-
-
-    ///Devuelve la lista de recursos que ha creado el usuario.
+     * @return La lista de recursos creados por el usuario.
+     */
     public List<Recurso> getRecursos() {
         return this.recursos;
     }
 
-    ///Añade un recurso a la lista de recursos creados por el usuario.
+    /**
+     * @param recurso El recurso a añadir a la lista.
+     */
     public void addRecurso(Recurso recurso) {
         this.recursos.add(recurso);
     }
 
-    ///Elimina un recurso de la lista de recursos creados por el usuario.
+    /**
+     * @param recurso El recurso a eliminar de la lista.
+     */
     public void removeRecurso(Recurso recurso) {
         this.recursos.remove(recurso);
     }
+
+    /**
+     * Devuelve una lista de todas las colecciones que ha creado el usuario.
+     * @return Lista de las colecciones del usuario.
+     */
+    public List<RecursoColeccion> getColecciones() {
+        List<RecursoColeccion> colecciones = new ArrayList<>();
+        for (Recurso recurso : this.recursos) {
+            if(recurso instanceof RecursoColeccion) {
+                colecciones.add((RecursoColeccion) recurso);
+            }
+        }
+
+        return colecciones;
+    }
+
+
 }

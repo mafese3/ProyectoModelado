@@ -19,39 +19,47 @@ public class UsuarioAdministrador extends Usuario {
         creaciones = new ArrayList<Contenido>();
     }
 
-
+    /**
+     * @return El DNI del usuario.
+     */
 	public String getDni() {
 		return this.dni;
 	}
 
 	/**
 	 * 
-	 * @param dni
+	 * @param dni El DNI del usuario.
 	 */
 	public void setDni(String dni) {
 		this.dni = dni;
 	}
 
+    /**
+     * @return El teléfono del usuario.
+     */
 	public String getTelefono() {
 		return this.telefono;
 	}
 
 	/**
-	 * 
-	 * @param telefono
+	 * @param telefono El teléfono del usuario.
 	 */
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
 
-    /// Métodos para acceder al listado de todas las creaciones del usuario administrador
+    /**
+     * @return Las creaciones del usuario.
+     */
     public List<Contenido> getCreaciones() {
         return creaciones;
     }
 
 
-    /// Métodos para añadir creaciones
+    /**
+     * @param contenido El contenido que ha creado el usuario.
+     */
     public void addCreacion(Contenido contenido) {
         creaciones.add(contenido);
     }

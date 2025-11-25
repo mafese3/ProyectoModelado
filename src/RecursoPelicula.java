@@ -23,6 +23,11 @@ public class RecursoPelicula extends Recurso{
         return pelicula;
     }
 
+    @Override
+    public void addToColeccion(RecursoColeccion coleccion) {
+        colecciones.add(coleccion);
+    }
+
     /**
      * @return La fecha en la que se ha visto la película.
      */
@@ -55,6 +60,10 @@ public class RecursoPelicula extends Recurso{
      */
     public void eliminar() {
         this.pelicula.removeRecurso(this);
+
+        for (RecursoColeccion coleccion : this.colecciones) {
+            coleccion.removeRecurso(this);
+        }
     }
 
     /**

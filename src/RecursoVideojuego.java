@@ -28,6 +28,11 @@ public class RecursoVideojuego extends Recurso {
         return this.videojuego;
     }
 
+    @Override
+    public void addToColeccion(RecursoColeccion coleccion) {
+        colecciones.add(coleccion);
+    }
+
 
     /**
      * @return Las horas que ha jugado.
@@ -92,6 +97,10 @@ public class RecursoVideojuego extends Recurso {
      */
     public void eliminar() {
         this.videojuego.removeRecurso(this);
+
+        for (RecursoColeccion coleccion : this.colecciones) {
+            coleccion.removeRecurso(this);
+        }
     }
 
     /**

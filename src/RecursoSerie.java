@@ -29,6 +29,11 @@ public class RecursoSerie extends Recurso {
         return this.serie;
     }
 
+    @Override
+    public void addToColeccion(RecursoColeccion coleccion) {
+        colecciones.add(coleccion);
+    }
+
     /**
      * @return La temporada que está viendo el usuario.
      */
@@ -98,6 +103,10 @@ public class RecursoSerie extends Recurso {
 
     public void eliminar() {
         this.serie.removeRecurso(this);
+
+        for (RecursoColeccion coleccion : this.colecciones) {
+            coleccion.removeRecurso(this);
+        }
     }
 
     /**

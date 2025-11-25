@@ -22,6 +22,11 @@ public class RecursoAlbum extends Recurso {
         return this.album;
     }
 
+    @Override
+    public void addToColeccion(RecursoColeccion coleccion) {
+        colecciones.add(coleccion);
+    }
+
     /**
      * @return La fecha en la que se ha escuchado el álbum.
      */
@@ -44,7 +49,7 @@ public class RecursoAlbum extends Recurso {
         this.album.removeRecurso(this);
 
         for(RecursoColeccion coleccion: colecciones) {
-
+            coleccion.removeRecurso(this);
         }
     }
 

@@ -28,6 +28,11 @@ public class RecursoLibro extends Recurso {
         return this.libro;
     }
 
+    @Override
+    public void addToColeccion(RecursoColeccion coleccion) {
+        colecciones.add(coleccion);
+    }
+
     /**
      * @return Las horas en las que ha sido completado el libro.
      */
@@ -89,6 +94,10 @@ public class RecursoLibro extends Recurso {
      */
     public void eliminar() {
         this.libro.removeRecurso(this);
+
+        for (RecursoColeccion coleccion : this.colecciones) {
+            coleccion.removeRecurso(this);
+        }
     }
 
     /**

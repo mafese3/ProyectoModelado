@@ -21,6 +21,11 @@ public class RecursoCancion extends Recurso {
         return this.cancion;
     }
 
+    @Override
+    public void addToColeccion(RecursoColeccion coleccion) {
+        colecciones.add(coleccion);
+    }
+
     /**
      * @return La fecha en la que se ha escuchado la canción.
      */
@@ -41,6 +46,9 @@ public class RecursoCancion extends Recurso {
      */
     public void eliminar() {
         this.cancion.removeRecurso(this);
+        for (RecursoColeccion coleccion : this.colecciones) {
+            coleccion.removeRecurso(this);
+        }
     }
 
     /**

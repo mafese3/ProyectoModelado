@@ -13,17 +13,16 @@ void main() {
     // Crear canciones sueltas
     Cancion cancion1 = new Cancion("Latin Girl", "Claudia Arenas", "2024-01-15", 180, "Pop", admin1);
     Cancion cancion2 = new Cancion("The fate of ophelia", "Taylor Swift", "2023-10-20", 220, "Pop", admin1);
-    Cancion cancion3 = new Cancion("Je vole", "Teyou", "2024-03-10", 195, "Pop/Balade", admin2);
+    Cancion cancion3 = new Cancion("Je vole", "Téyou", "2024-03-10", 195, "Pop/Balade", admin2);
     Cancion cancion4 = new Cancion("Catarata", "Guillo Rist", "2023-08-05", 210, "Techno/Pop", admin2);
     Cancion cancion5 = new Cancion("Peaches", "Justin Bieber", "2021-03-19", 198, "R&B", admin2);
-    Cancion cancion6 = new Cancion("4TO23", "Aitana", "2019-11-29", 200, "Synthwave", admin1);
-    
-    // Canciones nuevas de 2025 para la colección
-    Cancion cancion2025_1 = new Cancion("Euphoria", "Loreen", "2025-02-14", 185, "Dance-Pop", admin1);
-    Cancion cancion2025_2 = new Cancion("Starlight", "The Weeknd", "2025-03-22", 210, "R&B", admin1);
-    Cancion cancion2025_3 = new Cancion("Midnight Dreams", "Dua Lipa", "2025-04-10", 195, "Pop", admin2);
-    Cancion cancion2025_4 = new Cancion("Electric Soul", "Calvin Harris", "2025-05-18", 200, "Electronic", admin2);
-    Cancion cancion2025_5 = new Cancion("Neon Lights", "Billie Eilish", "2025-06-25", 178, "Alternative", admin1);
+    Cancion cancion6 = new Cancion("4TO23", "Aitana", "2019-11-29", 200, "Pop", admin1);
+
+    Cancion cancion7 = new Cancion("Euphoria", "Loreen", "2025-02-14", 185, "Dance-Pop", admin1);
+    Cancion cancion8 = new Cancion("Starlight", "The Weeknd", "2025-03-22", 210, "R&B", admin1);
+    Cancion cancion9 = new Cancion("Midnight Dreams", "Dua Lipa", "2025-04-10", 195, "Pop", admin2);
+    Cancion cancion10 = new Cancion("Electric Soul", "Calvin Harris", "2025-05-18", 200, "Electronic", admin2);
+    Cancion cancion11 = new Cancion("Neon Lights", "Billie Eilish", "2025-06-25", 178, "Alternative", admin1);
 
 
     // Crear canciones del álbum Lux de Rosalía
@@ -36,9 +35,9 @@ void main() {
     cancionesLux.add(cancionLux3);
 
     // Crear canciones del álbum Anela de Belén Aguilera
-    Cancion cancionAnela1 = new Cancion("Ático", "Belén Aguilera", "2023-05-12", 190, "Pop/Electrónica", admin1);
-    Cancion cancionAnela2 = new Cancion("Mutantes", "Belén Aguilera", "2023-05-12", 185, "Pop", admin1);
-    Cancion cancionAnela3 = new Cancion("Laberinto", "Belén Aguilera", "2023-05-12", 170, "Pop/Electrónica", admin1);
+    Cancion cancionAnela1 = new Cancion("Ático", "Belén Aguilera", "2023-05-12", 190, "Pop/Electrónica", admin2);
+    Cancion cancionAnela2 = new Cancion("Mutantes", "Belén Aguilera", "2023-05-12", 185, "Pop", admin2);
+    Cancion cancionAnela3 = new Cancion("Laberinto", "Belén Aguilera", "2023-05-12", 170, "Pop/Electrónica", admin2);
     List<Cancion> cancionesAnela = new ArrayList<>();
     cancionesAnela.add(cancionAnela1);
     cancionesAnela.add(cancionAnela2);
@@ -55,7 +54,7 @@ void main() {
 
     // Crear álbumes
     Album album1 = new Album("Lux", "Rosalía", "2022-03-18", "Flamenco Pop", admin1, cancionesLux);
-    Album album2 = new Album("Anela", "Belén Aguilera", "2023-05-12", "Pop", admin1, cancionesAnela);
+    Album album2 = new Album("Anela", "Belén Aguilera", "2023-05-12", "Pop", admin2, cancionesAnela);
     Album album3 = new Album("Cuarto Azul", "Aitana", "2024-02-09", "Pop", admin2, cancionesCuartoAzul);
 
     // Crear libros
@@ -80,8 +79,7 @@ void main() {
     Serie serie1 = new Serie("Los 100", "Jason Rothenberg", 7, "2014-03-19", "Ciencia Ficción", admin1);
     Serie serie2 = new Serie("Juego de Tronos", "David Benioff", 8, "2011-04-17", "Fantasía", admin2);
     Serie serie3 = new Serie("Stranger Things", "The Duffer Brothers", 5, "2016-07-15", "Ciencia Ficción", admin2);
-    
-    // Series adicionales para Watchlist
+
     Serie serie4 = new Serie("The Last of Us", "Craig Mazin", 2, "2023-01-15", "Drama", admin1);
     Serie serie5 = new Serie("Wednesday", "Alfred Gough", 2, "2022-11-23", "Comedia", admin2);
     Serie serie6 = new Serie("The Crown", "Peter Morgan", 6, "2016-11-04", "Drama", admin1);
@@ -118,11 +116,11 @@ void main() {
     RecursoVideojuego recursoVideojuego1 = new RecursoVideojuego(5, "Infinitas horas de diversión", TipoEstado.EN_CURSO, true, usuario1, 350, 1, "2022-05-10", "", videojuego1);
     RecursoVideojuego recursoVideojuego2 = new RecursoVideojuego(5, "Obra maestra del roguelike", TipoEstado.COMPLETADO, true, usuario3, 45, 3, "2024-08-01", "2024-09-15", videojuego3);
 
-    RecursoCancion recursoCancion3 = new RecursoCancion(5, "Me encanta esta canción!", TipoEstado.COMPLETADO, true, usuario1, "2025-02-20", cancion2025_1);
-    RecursoCancion recursoCancion4 = new RecursoCancion(5, "Súper pegadiza", TipoEstado.COMPLETADO, true, usuario1, "2025-03-25", cancion2025_2);
-    RecursoCancion recursoCancion5 = new RecursoCancion(4, "Muy buena producción", TipoEstado.COMPLETADO, true, usuario1, "2025-04-15", cancion2025_3);
-    RecursoCancion recursoCancion6 = new RecursoCancion(5, "Perfecta para bailar", TipoEstado.COMPLETADO, true, usuario1, "2025-05-20", cancion2025_4);
-    RecursoCancion recursoCancion7 = new RecursoCancion(5, "Simplemente perfecta", TipoEstado.COMPLETADO, true, usuario1, "2025-06-28", cancion2025_5);
+    RecursoCancion recursoCancion3 = new RecursoCancion(5, "Me encanta esta canción!", TipoEstado.COMPLETADO, true, usuario1, "2025-02-20", cancion7);
+    RecursoCancion recursoCancion4 = new RecursoCancion(5, "Súper pegadiza", TipoEstado.COMPLETADO, true, usuario1, "2025-03-25", cancion8);
+    RecursoCancion recursoCancion5 = new RecursoCancion(4, "Muy buena producción", TipoEstado.COMPLETADO, true, usuario1, "2025-04-15", cancion9);
+    RecursoCancion recursoCancion6 = new RecursoCancion(5, "Perfecta para bailar", TipoEstado.COMPLETADO, true, usuario1, "2025-05-20", cancion10);
+    RecursoCancion recursoCancion7 = new RecursoCancion(5, "Simplemente perfecta", TipoEstado.COMPLETADO, true, usuario1, "2025-06-28", cancion11);
 
     RecursoPelicula recursoPelicula3 = new RecursoPelicula(0, "Pendiente de ver", TipoEstado.PENDIENTE, false, usuario2, 0, 0, pelicula6);
     RecursoPelicula recursoPelicula4 = new RecursoPelicula(0, "Quiero verla pronto", TipoEstado.PENDIENTE, false, usuario2, 0, 0, pelicula7);
@@ -172,8 +170,10 @@ void main() {
     System.out.println("Canciones del álbum Lux después de eliminar: " + album1.getListaCanciones());
     
     System.out.println("\n=== PRUEBA 4: Crear nuevos recursos y observar actualización de calificación media ===");
+    System.out.println("La calificación media previa del álbum: "+ album1.getCalificacionMedia());
     RecursoAlbum recursoAlbum3 = new RecursoAlbum(3, "No me convenció del todo", TipoEstado.COMPLETADO, false, usuario3, "2024-08-20", album1);
     RecursoAlbum recursoAlbum4 = new RecursoAlbum(5, "Obra maestra", TipoEstado.COMPLETADO, true, usuario4, "2024-09-10", album1);
+    System.out.println("La calificación media posterior del álbum: "+album1.getCalificacionMedia());
     
     System.out.println("\n=== PRUEBA 5: Añadir y eliminar recursos de colecciones ===");
     System.out.println("Recursos en colección Canciones favoritas de 2025:");

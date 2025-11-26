@@ -48,8 +48,13 @@ public class RecursoColeccion extends Recurso {
         if (this.tipoRecurso == TipoRecurso.COLECCION) {
             this.tipoRecurso = recurso.getTipo();
         } else if(recurso.getTipo() == this.tipoRecurso) {
-            this.recursos.add(recurso);
-            System.out.println("El recurso de: "+ recurso.getContenido().getNombre() +" ha sido añadido.");
+            if(this.getUsuario().getRecursos().contains(recurso)) {
+                this.recursos.add(recurso);
+                System.out.println("El recurso de: "+ recurso.getContenido().getNombre() +" ha sido añadido.");
+            } else {
+                System.out.println("El recurso a añadir debe ser del mismo usuario que la colección.")
+            }
+
         } else {
             System.out.println("El recurso a añadir debe ser del mismo tipo que la colección.");
         }

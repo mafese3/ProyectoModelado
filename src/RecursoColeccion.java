@@ -52,7 +52,7 @@ public class RecursoColeccion extends Recurso {
                 this.recursos.add(recurso);
                 System.out.println("El recurso de: "+ recurso.getContenido().getNombre() +" ha sido añadido.");
             } else {
-                System.out.println("El recurso a añadir debe ser del mismo usuario que la colección.")
+                System.out.println("El recurso a añadir debe ser del mismo usuario que la colección.");
             }
 
         } else {
